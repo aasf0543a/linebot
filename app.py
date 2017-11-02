@@ -499,7 +499,7 @@ def handle_message(event):
                     text='開始玩'
                  ),
                 URITemplateAction(
-                    label='聯絡作者',
+                    label='玩弄作者',
                     uri='https://www.facebook.com/shangju.wu.3/'
                 )
             ]
