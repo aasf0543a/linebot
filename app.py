@@ -371,7 +371,7 @@ def handle_message(event):
             template=ButtonsTemplate(
                 title='選擇服務',
                 text='請選擇',
-                thumbnail_image_url='https://i.imgur.com/d9RFaA2.jpg',
+                thumbnail_image_url='https://i.imgur.com/d9RFaA2.jpg',  #玩很大照片
                 actions=[
                     MessageTemplateAction(
                         label='新聞',
@@ -492,7 +492,7 @@ def handle_message(event):
         template=ButtonsTemplate(
             title='選擇服務',
             text='請選擇',
-            thumbnail_image_url='https://i.imgur.com/EtpKJ06.jpg',
+            thumbnail_image_url='https://i.imgur.com/EtpKJ06.jpg', #馬力歐照片
             actions=[
                 MessageTemplateAction(
                     label='開始玩',
@@ -500,7 +500,7 @@ def handle_message(event):
                  ),
                 URITemplateAction(
                     label='玩弄作者',
-                    uri='https://www.facebook.com/shangju.wu.3/'
+                    uri='https://www.facebook.com/shangju.wu.3/'  #個人FB專頁
                 )
             ]
         )
