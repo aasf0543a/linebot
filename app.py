@@ -371,7 +371,7 @@ def handle_message(event):
             template=ButtonsTemplate(
                 title='選擇服務',
                 text='請選擇',
-                thumbnail_image_url='https://i.imgur.com/rpzvkpF.jpg',  #Playforlife照片
+                thumbnail_image_url='https://i.imgur.com/VkUQGif.jpg',  #Playforlife照片
                 actions=[
                     MessageTemplateAction(
                         label='新聞',
