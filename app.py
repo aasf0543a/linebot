@@ -278,13 +278,13 @@ def technews():
 
 
 def panx():
-    target_url = 'https://technews.tw/author/cool3c/'#癮科技
+    target_url = 'https://panx.asia/'
     print('Start parsing ptt hot....')
     rs = requests.session()
     res = rs.get(target_url, verify=False)
     soup = BeautifulSoup(res.text, 'html.parser')
     content = ""
-    for data in soup.select('div.class li a title'):
+    for data in soup.select('div.container div.row div.desc_wrap h2 a'):
         title = data.text
         link = data['href']
         content += '{}\n{}\n\n'.format(title, link)
@@ -359,7 +359,7 @@ def handle_message(event):
             event.reply_token,
             TextSendMessage(text=content))
         return 0
-    if event.message.text == "癮科技":
+    if event.message.text == "PanX泛科技":
         content = panx()
         line_bot_api.reply_message(
             event.reply_token,
@@ -411,8 +411,8 @@ def handle_message(event):
                         text='科技新報'
                     ),
                     MessageTemplateAction(
-                        label='癮科技',
-                        text='癮科技'
+                        label='PanX泛科技',
+                        text='PanX泛科技'
                     )
                 ]
             )
