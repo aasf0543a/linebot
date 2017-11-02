@@ -411,8 +411,8 @@ def handle_message(event):
                         text='科技新報'
                     ),
                     MessageTemplateAction(
-                        label='PanX泛科技',
-                        text='PanX泛科技'
+                        label='癮科技',
+                        text='癮科技'
                     )
                 ]
             )
