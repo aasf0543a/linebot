@@ -497,18 +497,10 @@ def handle_message(event):
                 MessageTemplateAction(
                     label='開始玩',
                     text='開始玩'
-                ),
-                URITemplateAction(
-                    label='影片介紹 阿肥bot',
-                    uri='https://youtu.be/1IxtWgWxtlE'
-                ),
-                URITemplateAction(
-                    label='如何建立自己的 Line Bot',
-                    uri='https://github.com/twtrubiks/line-bot-tutorial'
-                ),
+                 ),
                 URITemplateAction(
                     label='聯絡作者',
-                    uri='https://www.facebook.com/TWTRubiks?ref=bookmarks'
+                    uri='https://www.facebook.com/shangju.wu.3/'
                 )
             ]
         )
