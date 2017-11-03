@@ -75,7 +75,7 @@ def eyny_movie():
 
 def apple_news():
     target_url = 'http://www.appledaily.com.tw/realtimenews/section/new/'
-    head = 'http://www.appledaily.com.tw'
+    #head = 'http://www.appledaily.com.tw'
     print('Start parsing appleNews....')
     rs = requests.session()
     res = rs.get(target_url, verify=False)
@@ -84,12 +84,10 @@ def apple_news():
     for index, data in enumerate(soup.select('.rtddt a'), 0):
         if index == 15:
             return content
-        print(data)
-        if head in data['href']:
+        if  tag == "h1":
+            title = data['h1']
             link = data['href']
-        else:
-            link = head + data['href']
-        content += '{}\n\n'.format(link)
+        content += '{}\n\n'.format(title,link)
     return content
 
 
