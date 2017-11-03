@@ -82,7 +82,7 @@ def apple_news():
     soup = BeautifulSoup(res.text, 'html.parser')
     content = ""
     for index, data in enumerate(soup.select('.rtddt a'), 0):
-        print(data)
+        print('data')
         if index == 15:
             return content
         if head in data['href']:
