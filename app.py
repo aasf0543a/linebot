@@ -75,7 +75,7 @@ def eyny_movie():
 
 def apple_news():
     target_url = 'http://www.appledaily.com.tw/realtimenews/section/new/'
-    print('Start parsing appleNews....'
+    print('Start parsing appleNews....')
     rs = requests.session()
     res = rs.get(target_url, verify=False)
     soup = BeautifulSoup(res.text, 'html.parser')
