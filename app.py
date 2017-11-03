@@ -87,7 +87,7 @@ def apple_news():
         if head in data['href']:
             link = data['href']
         else:
-            link = head + data['href']
+            link = data['h1'] + data['href']
         content += '{}\n\n'.format(link)
     return content
 
