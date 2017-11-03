@@ -83,9 +83,9 @@ def apple_news():
     content = ""
     for index, data in enumerate(soup.select('.rtddt a'), 0):
         if index == 15:
-            print(data)
             return content
         if head in data['href']:
+            print(data)
             link = data['href']
         else:
             link = head + data['href']
