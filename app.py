@@ -84,12 +84,12 @@ def apple_news():
     for index, data in enumerate(soup.select('.rtddt a'), 0):
         if index == 15:
             return content
-        if head in data['href']:
-            link = data['href']
-        else:
-            link = head + data['href']
-        content += '{}\n\n'.format(link)
-    return content
+        #if head in data['href']:
+        #    link = data['href']
+        #else:
+        #    link = head + data['href']
+        #content += '{}\n\n'.format(link)
+    #return content
 
 
 def get_page_number(content):
