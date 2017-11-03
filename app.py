@@ -85,7 +85,7 @@ def apple_news():
         if index == 15:
             return content
         if  tag == "h1":
-            title = (data.find("h1")
+            title = (data.find("h1"))
             link = data['href']
         content += '{}\n\n'.format(title,link)
     return content
