@@ -81,13 +81,13 @@ def apple_news():
     res = rs.get(target_url, verify=False)
     soup = BeautifulSoup(res.text, 'html.parser')
     content = ""
+    title = ""
     for index, data in enumerate(soup.select('.rtddt a'), 0):
         if index == 15:
             return content
             title = data['h1'.text]
             link = data['href']
-            print(title)
-        #content = '{} {}'.format(title,link)
+        content = '{} {}'.format(title,link)
     return content
 
 
