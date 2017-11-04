@@ -88,7 +88,7 @@ def apple_news():
             return content
             title = data['h1']
             link = data['href']
-        content += '{} {}'.format(title,link)
+        content = '{} {}'.format(title,link)
     return content
 
 
