@@ -85,9 +85,9 @@ def apple_news():
         if index == 15:
             return content
         if head in data['href']:
-           title = data.select('h1')
+           title = data.select('.rtddt h1')
         else:
-           title = data.select('h1')
+           title = data.select('.rtddt h1')
            link = data['href']
         print(title)
         content += '{}\n\n'.format(link)
