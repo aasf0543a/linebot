@@ -90,7 +90,7 @@ def apple_news():
            title = data.select('h1')
            link = title + data
         print(title)
-        content += '{}\n\n'.format(data, link)
+        content += '{}\n\n'.format(link)
     return content
 
 
