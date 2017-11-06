@@ -88,7 +88,7 @@ def apple_news():
            title = data.select('h1')
         else:
            title = data.select('h1')
-           link = title + data['href']
+           link = data['href']
         print(title)
         content += '{}\n\n'.format(link)
     return content
