@@ -23,7 +23,7 @@ handler = WebhookHandler(config['line_bot']['Channel_Secret'])
 client_id = config['imgur_api']['Client_ID']
 client_secret = config['imgur_api']['Client_Secret']
 album_id = config['imgur_api']['Album_ID']
-API_Get_Image = config['other_api']['API_Get_Image']
+API_Get_Image = 'https://ptt-beauty-images.herokuapp.com'
 
 
 @app.route("/callback", methods=['POST'])
