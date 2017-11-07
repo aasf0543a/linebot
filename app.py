@@ -365,6 +365,10 @@ def handle_message(event):
                 thumbnail_image_url='https://i.imgur.com/VkUQGif.jpg',  #Playforlife照片
                 actions=[
                     MessageTemplateAction(
+                        label='天氣',
+                        text='天氣'
+                    ),
+                    MessageTemplateAction(
                         label='新聞',
                         text='新聞'
                     ),
