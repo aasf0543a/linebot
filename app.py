@@ -326,16 +326,6 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token, image_message)
         return 0
-    if event.message.text == "隨便來張正妹圖片":
-        image = requests.get(API_Get_Image)
-        url = image.json().get('Url')
-        image_message = ImageSendMessage(
-            original_content_url=url,
-            preview_image_url=url
-        )
-        line_bot_api.reply_message(
-            event.reply_token, image_message)
-        return 0
     if event.message.text == "近期熱門廢文":
         content = ptt_hot()
         line_bot_api.reply_message(
@@ -477,10 +467,6 @@ def handle_message(event):
                     MessageTemplateAction(
                         label='來張 imgur 正妹圖片',
                         text='來張 imgur 正妹圖片'
-                    ),
-                    MessageTemplateAction(
-                        label='隨便來張正妹圖片',
-                        text='隨便來張正妹圖片'
                     )
                 ]
             )
