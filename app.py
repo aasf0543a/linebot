@@ -379,10 +379,6 @@ def handle_message(event):
                     MessageTemplateAction(
                         label='看廢文',
                         text='看廢文'
-                    ),
-                    MessageTemplateAction(
-                        label='正妹',
-                        text='正妹'
                     )
                 ]
             )
