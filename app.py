@@ -298,7 +298,7 @@ def yahoo():
     res = rs.get(target_url, verify=False)
     soup = BeautifulSoup(res.text, 'html.parser')
     content = "尚未回應"
-    print('soup')
+    print(soup)
     return content
 
 
