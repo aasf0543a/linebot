@@ -293,7 +293,7 @@ def panx():
 
 def apple_Finance():
     target_url = 'https://tw.finance.appledaily.com/realtime/'
-    head = 'https://tw.appledaily.com'
+    head = 'https://tw.finance.appledaily.com'
     print('Start parsing appleNews....')
     rs = requests.session()
     res = rs.get(target_url, verify=False)
@@ -306,7 +306,7 @@ def apple_Finance():
            title = data.select('h1')[0].text
         else:
            title = data.select('h1')[0].text
-           link = data['href']
+           link = head + data['href']
         content += '{}\n{}\n\n'.format(title, link)
     return content
 
