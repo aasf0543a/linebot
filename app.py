@@ -291,13 +291,23 @@ def panx():
         content += '{}\n{}\n\n'.format(title, link)
     return content
 
-def yahoo():
-    target_url = 'https://tw.news.yahoo.com/stock'
-    print('Start parsing yahoo....')
+def apple_Finance():
+    target_url = 'https://tw.finance.appledaily.com/realtime/'
+    head = 'https://tw.finance.appledaily.com'
+    print('Start parsing appleNews....')
     rs = requests.session()
     res = rs.get(target_url, verify=False)
     soup = BeautifulSoup(res.text, 'html.parser')
-    content = "尚未回應"
+    content = ""
+    for index, data in enumerate(soup.select('.rtddt a'), 0):
+        if index == 15:
+            return content
+        if head in data['href']:
+           title = data.select('h1')[0].text
+        else:
+           title = data.select('h1')[0].text
+           link = data['href']
+        content += '{}\n{}\n\n'.format(title, link)
     return content
 
 
@@ -365,7 +375,7 @@ def handle_message(event):
             event.reply_token,
             TextSendMessage(text=content))
         return 0
-    if event.message.text == "Yahoo財經":
+    if event.message.text == "蘋果財經":
         content = yahoo()
         line_bot_api.reply_message(
             event.reply_token,
@@ -421,8 +431,8 @@ def handle_message(event):
                         text='PanX泛科技'
                     ),
                     MessageTemplateAction(
-                        label='Yahoo財經',
-                        text='Yahoo財經'
+                        label='蘋果財經',
+                        text='蘋果財經'
                     )
                 ]
             )
