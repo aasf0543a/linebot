@@ -376,7 +376,7 @@ def handle_message(event):
             TextSendMessage(text=content))
         return 0
     if event.message.text == "蘋果財經":
-        content = yahoo()
+        content = apple_Finance()
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=content))
