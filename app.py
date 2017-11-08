@@ -279,13 +279,13 @@ def technews():
 
 
 def panx():
-    target_url = 'https://www.cool3c.com/'
+    target_url = 'https://panx.asia/'
     print('Start parsing ptt hot....')
     rs = requests.session()
     res = rs.get(target_url, verify=False)
     soup = BeautifulSoup(res.text, 'html.parser')
     content = ""
-    for data in soup.select('div.inner div.category div.title a'):
+    for data in soup.select('div.container div.row div.desc_wrap h2 a'):
         title = data.text
         link = data['href']
         content += '{}\n{}\n\n'.format(title, link)
