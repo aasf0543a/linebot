@@ -291,6 +291,16 @@ def panx():
         content += '{}\n{}\n\n'.format(title, link)
     return content
 
+def yahoo():
+    target_url = 'https://tw.news.yahoo.com/stock'
+    print('Start parsing yahoo....')
+    rs = requests.session()
+    res = rs.get(target_url, verify=False)
+    soup = BeautifulSoup(res.text, 'html.parser')
+    content = "尚未回應"
+    print('soup')
+    return content
+
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
@@ -356,6 +366,12 @@ def handle_message(event):
             event.reply_token,
             TextSendMessage(text=content))
         return 0
+    if event.message.text == "Yahoo財經":
+        content = yahoo()
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=content))
+        return 0
     if event.message.text == "開始玩":
         buttons_template = TemplateSendMessage(
             alt_text='開始玩 template',
@@ -404,6 +420,10 @@ def handle_message(event):
                     MessageTemplateAction(
                         label='PanX泛科技',
                         text='PanX泛科技'
+                    ),
+                    MessageTemplateAction(
+                        label='Yahoo財經',
+                        text='Yahoo財經'
                     )
                 ]
             )
