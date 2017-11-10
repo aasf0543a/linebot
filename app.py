@@ -5,6 +5,7 @@ import configparser
 from bs4 import BeautifulSoup
 from flask import Flask, request, abort     # 從flask框架中導入Flask類
 from imgurpython import ImgurClient
+from chatterbot import ChatBot              # 引入 ChatBot
 
 from linebot import (
     LineBotApi, WebhookHandler
