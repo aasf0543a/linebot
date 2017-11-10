@@ -3,7 +3,7 @@ import re
 import random
 import configparser
 from bs4 import BeautifulSoup
-from flask import Flask, request, abort
+from flask import Flask, request, abort     # 從flask框架中導入Flask類
 from imgurpython import ImgurClient
 
 from linebot import (
@@ -14,7 +14,7 @@ from linebot.exceptions import (
 )
 from linebot.models import *
 
-app = Flask(__name__)
+app = Flask(__name__)                       # 傳入__name__初始化一個Flask實例
 config = configparser.ConfigParser()
 config.read("config.ini")
 
@@ -26,7 +26,7 @@ album_id = config['imgur_api']['Album_ID']
 API_Get_Image = 'https://ptt-beauty-images.herokuapp.com'
 
 
-@app.route("/callback", methods=['POST'])
+@app.route("/callback", methods=['POST'])    # app.route裝飾器映射URL和執行的函數。
 def callback():
     # get X-Line-Signature header value
     signature = request.headers['X-Line-Signature']
@@ -524,5 +524,5 @@ def handle_message(event):
     line_bot_api.reply_message(event.reply_token, buttons_template)
 
 
-if __name__ == '__main__':
+if __name__ == '__main__':      # 運行本項目，host=0.0.0.0可以讓其他電腦也能訪問到該網站，port指定訪問的埠。默認的host是127.0.0.1，port為5000
     app.run()
