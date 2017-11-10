@@ -502,10 +502,10 @@ def handle_message(event):
         )
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
-
-    buttons_template = TemplateSendMessage(
-        alt_text='目錄 template',
-        template=ButtonsTemplate(
+    if event.message.text == "我想要知道":
+        buttons_template = TemplateSendMessage(
+          alt_text='目錄 template',
+          template=ButtonsTemplate(
             title='選擇服務',
             text='請選擇',
             thumbnail_image_url='https://i.imgur.com/EtpKJ06.jpg', #馬力歐照片
