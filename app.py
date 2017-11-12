@@ -526,5 +526,19 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
 
+#Create a new instance of the ChatBot class.
+
+chatbot = chatbot('Norman',trainer='chattebot.trainers.ListTrainer')
+Chatbot.train(["Hi, Can I help you"
+               "Sure, I'd like to book a flight to Iceland."
+			   "Your flight has been booked."
+			   ])
+#Get a response to the input text 'How are you?'
+response = chatbot.get_response('I would like to book a flight.')
+print(response)    
+    
+    
+    
+    
 if __name__ == '__main__':      # 運行本項目，host=0.0.0.0可以讓其他電腦也能訪問到該網站，port指定訪問的埠。默認的host是127.0.0.1，port為5000
     app.run()
