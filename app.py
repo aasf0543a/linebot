@@ -528,8 +528,8 @@ def handle_message(event):
 
 #Create a new instance of the ChatBot class.
 
-chatbot = chatbot('Norman',trainer='chattebot.trainers.ListTrainer')
-Chatbot.train(["Hi, Can I help you"
+chatbot = Chatbot('Norman',trainer='chattebot.trainers.ListTrainer')
+chatbot.train(["Hi, Can I help you"
                "Sure, I'd like to book a flight to Iceland."
 			   "Your flight has been booked."
 			   ])
