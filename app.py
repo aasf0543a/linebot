@@ -505,26 +505,26 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
     if event.message.text == "我":
-    buttons_template = TemplateSendMessage(
-          alt_text='目錄 template',
-          template=ButtonsTemplate(
-            title='選擇服務',
-            text='請選擇',
-            thumbnail_image_url='https://i.imgur.com/EtpKJ06.jpg', #馬力歐照片
-            actions=[
+        buttons_template = TemplateSendMessage(
+            alt_text='目錄 template',
+            template=ButtonsTemplate(
+                title='選擇服務',
+                text='請選擇',
+                thumbnail_image_url='https://i.imgur.com/EtpKJ06.jpg', #馬力歐照片
+                 actions=[
                 MessageTemplateAction(
                     label='開始玩',
                     text='開始玩'
-                 ),
+                     ),
                 URITemplateAction(
                     label='玩弄作者',
                     uri='https://www.facebook.com/shangju.wu.3/'  #個人FB專頁
+                    )
+                     ]
                 )
-            ]
-        )
-    )
-    line_bot_api.reply_message(event.reply_token, buttons_template)
-    return 0
+            )
+        line_bot_api.reply_message(event.reply_token, buttons_template)
+        return 0
 
 if __name__ == '__main__':      # 運行本項目，host=0.0.0.0可以讓其他電腦也能訪問到該網站，port指定訪問的埠。默認的host是127.0.0.1，port為5000
     app.run()
