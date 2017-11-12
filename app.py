@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 from flask import Flask, request, abort     # 從flask框架中導入Flask類
 from imgurpython import ImgurClient
 from chatterbot import ChatBot              # 引入 ChatBot
+from chatterbot.trainers import ChatterBotCorpusTrainer
 
 from linebot import (
     LineBotApi, WebhookHandler
@@ -504,6 +505,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
     
+if event.message.text == "作者":    
     buttons_template = TemplateSendMessage(
           alt_text='目錄 template',
           template=ButtonsTemplate(
