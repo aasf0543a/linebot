@@ -527,25 +527,17 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
 
-class KantaiBOT:
-    # 建立一個 ChatBot
-    chatbot = ChatBot(
-        # 這個 ChatBot 的名字叫做 KantaiBOT
-        "KantaiBOT",
-        storage_adapter = "chatterbot.storage.JsonFileStorageAdapter",
-        # 設定訓練的資料庫輸出於根目錄，並命名為 KantaiBOT_DB.json
-        database = "./KantaiBOT_DB.json"    
-    )
+chatbot = ChatBot(
+    'Ron Obvious',
+    trainer='chatterbot.trainers.ChatterBotCorpusTrainer'
+)
 
-    def __init__(self):
-        self.chatbot.set_trainer(ChatterBotCorpusTrainer)
-        self.chatbot.train("chatterbot.corpus.chinese")
+# Train based on the english corpus
+chatbot.train("chatterbot.corpus.english")
 
-    def getResponse(self, message=""):
-        return self.chatbot.get_response(message)  
+# Get a response to an input statement
+print(chatbot.get_response("Hello, how are you today?"))
     
     
 if __name__ == '__main__':      # 運行本項目，host=0.0.0.0可以讓其他電腦也能訪問到該網站，port指定訪問的埠。默認的host是127.0.0.1，port為5000
     app.run()
-    bot = KantaiBOT()
-    print(bot.getResponse(sys.argv[1]))
