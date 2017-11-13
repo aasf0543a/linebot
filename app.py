@@ -533,7 +533,7 @@ chatbot = ChatBot(
 )
 
 # Train based on the english corpus
-chatbot.train("chatterbot.corpus.english")
+chatbot.train("chatterbot.corpus.chinese")
 
 # Get a response to an input statement
 print(chatbot.get_response("Hello, how are you today?"))
