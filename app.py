@@ -527,16 +527,36 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
 
-chatbot = ChatBot(
-    'Ron Obvious',
-    trainer='chatterbot.trainers.ChatterBotCorpusTrainer'
+
+# Uncomment the following lines to enable verbose logging
+# import logging
+# logging.basicConfig(level=logging.INFO)
+
+# Create a new instance of a ChatBot
+bot = ChatBot(
+    "SQLMemoryTerminal",
+    storage_adapter='chatterbot.storage.SQLStorageAdapter',
+    logic_adapters=[
+        "chatterbot.logic.MathematicalEvaluation",
+        "chatterbot.logic.TimeLogicAdapter",
+        "chatterbot.logic.BestMatch"
+    ],
+    input_adapter="chatterbot.input.TerminalAdapter",
+    output_adapter="chatterbot.output.TerminalAdapter",
 )
 
-# Train based on the english corpus
-chatbot.train("chatterbot.corpus.chinese")
+print("Type something to begin...")
 
-# Get a response to an input statement
-print(chatbot.get_response("Hello, how are you today?"))
+# The following loop will execute each time the user enters input
+while True:
+    try:
+        # We pass None to this method because the parameter
+        # is not used by the TerminalAdapter
+        bot_input = bot.get_response(None)
+
+    # Press ctrl-c or ctrl-d on the keyboard to exit
+    except (KeyboardInterrupt, EOFError, SystemExit):
+        break
     
     
 if __name__ == '__main__':      # 運行本項目，host=0.0.0.0可以讓其他電腦也能訪問到該網站，port指定訪問的埠。默認的host是127.0.0.1，port為5000
