@@ -329,7 +329,97 @@ def handle_sticker_message(event):
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     print("Handle: reply_token: " + event.reply_token + ", message: " + event.message.text)
-    if event.message.text != "eyny" and "蘋果即時新聞":
+    if event.message.text != "eyny":
+        content = "{}".format(event.message.text)
+        line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=content))
+        return 0
+    if event.message.text != "蘋果即時新聞":
+        content = "{}".format(event.message.text)
+        line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=content))
+        return 0
+    if event.message.text != "PTT 表特版 近期大於 10 推的文章":
+        content = "{}".format(event.message.text)
+        line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=content))
+        return 0
+    if event.message.text != "來張 imgur 正妹圖片":
+        content = "{}".format(event.message.text)
+        line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=content))
+        return 0
+    if event.message.text != "近期熱門廢文":
+        content = "{}".format(event.message.text)
+        line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=content))
+        return 0
+    if event.message.text != "即時廢文":
+        content = "{}".format(event.message.text)
+        line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=content))
+        return 0
+    if event.message.text != "近期上映電影":
+        content = "{}".format(event.message.text)
+        line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=content))
+        return 0
+    if event.message.text != "科技新報":
+        content = "{}".format(event.message.text)
+        line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=content))
+        return 0
+    if event.message.text != "PanX泛科技":
+        content = "{}".format(event.message.text)
+        line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=content))
+        return 0
+    if event.message.text != "蘋果財經":
+        content = "{}".format(event.message.text)
+        line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=content))
+        return 0
+    if event.message.text != "開始玩":
+        content = "{}".format(event.message.text)
+        line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=content))
+        return 0
+    if event.message.text != "新聞":
+        content = "{}".format(event.message.text)
+        line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=content))
+        return 0
+    if event.message.text != "電影":
+        content = "{}".format(event.message.text)
+        line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=content))
+        return 0
+    if event.message.text != "看廢文":
+        content = "{}".format(event.message.text)
+        line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=content))
+        return 0
+    if event.message.text != "正妹":
+        content = "{}".format(event.message.text)
+        line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=content))
+        return 0
+    if event.message.text != "我":
         content = "{}".format(event.message.text)
         line_bot_api.reply_message(
         event.reply_token,
