@@ -334,116 +334,26 @@ def handle_message(event):
         line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=content))
-        contiune
-    elif event.message.text != "蘋果即時新聞":
-        content = "{}".format(event.message.text)
-        line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=content))
-        contiune
-    elif event.message.text != "PTT 表特版 近期大於 10 推的文章":
-        content = "{}".format(event.message.text)
-        line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=content))
-        contiune
-    elif event.message.text != "來張 imgur 正妹圖片":
-        content = "{}".format(event.message.text)
-        line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=content))
-        contiune
-    elif event.message.text != "近期熱門廢文":
-        content = "{}".format(event.message.text)
-        line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=content))
-        contiune
-    elif event.message.text != "即時廢文":
-        content = "{}".format(event.message.text)
-        line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=content))
-        contiune
-    elif event.message.text != "近期上映電影":
-        content = "{}".format(event.message.text)
-        line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=content))
-        contiune
-    elif event.message.text != "科技新報":
-        content = "{}".format(event.message.text)
-        line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=content))
-        contiune
-    elif event.message.text != "PanX泛科技":
-        content = "{}".format(event.message.text)
-        line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=content))
-        contiune
-    elif event.message.text != "蘋果財經":
-        content = "{}".format(event.message.text)
-        line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=content))
-        contiune
-    elif event.message.text != "開始玩":
-        content = "{}".format(event.message.text)
-        line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=content))
-        contiune
-    elif event.message.text != "新聞":
-        content = "{}".format(event.message.text)
-        line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=content))
-        contiune
-    elif event.message.text != "電影":
-        content = "{}".format(event.message.text)
-        line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=content))
-        contiune
-    elif event.message.text != "看廢文":
-        content = "{}".format(event.message.text)
-        line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=content))
-        contiune
-    elif event.message.text != "正妹":
-        content = "{}".format(event.message.text)
-        line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=content))
-        contiune
-    elif event.message.text != "我":
-        content = "{}".format(event.message.text)
-        line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=content))
-        contiune
-    elif event.message.text == "eyny":
+        return 0
+    if event.message.text == "eyny":
         content = eyny_movie()
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=content))
         return 0
-    elif event.message.text == "蘋果即時新聞":
+    if event.message.text == "蘋果即時新聞":
         content = apple_news()
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=content))
         return 0
-    elif event.message.text == "PTT 表特版 近期大於 10 推的文章":
+    if event.message.text == "PTT 表特版 近期大於 10 推的文章":
         content = ptt_beauty()
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=content))
         return 0
-    elif event.message.text == "來張 imgur 正妹圖片":
+    if event.message.text == "來張 imgur 正妹圖片":
         client = ImgurClient(client_id, client_secret)
         images = client.get_album_images(album_id)
         index = random.randint(0, len(images) - 1)
@@ -455,43 +365,43 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token, image_message)
         return 0
-    elif event.message.text == "近期熱門廢文":
+    if event.message.text == "近期熱門廢文":
         content = ptt_hot()
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=content))
         return 0
-    elif event.message.text == "即時廢文":
+    if event.message.text == "即時廢文":
         content = ptt_gossiping()
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=content))
         return 0
-    elif event.message.text == "近期上映電影":
+    if event.message.text == "近期上映電影":
         content = movie()
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=content))
         return 0
-    elif event.message.text == "科技新報":
+    if event.message.text == "科技新報":
         content = technews()
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=content))
         return 0
-    elif event.message.text == "PanX泛科技":
+    if event.message.text == "PanX泛科技":
         content = panx()
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=content))
         return 0
-    elif event.message.text == "蘋果財經":
+    if event.message.text == "蘋果財經":
         content = apple_Finance()
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=content))
         return 0
-    elif event.message.text == "開始玩":
+    if event.message.text == "開始玩":
         buttons_template = TemplateSendMessage(
             alt_text='開始玩 template',
             template=ButtonsTemplate(
@@ -520,7 +430,7 @@ def handle_message(event):
         )
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
-    elif event.message.text == "新聞":
+    if event.message.text == "新聞":
         buttons_template = TemplateSendMessage(
             alt_text='新聞 template',
             template=ButtonsTemplate(
@@ -549,7 +459,7 @@ def handle_message(event):
         )
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
-    elif event.message.text == "電影":
+    if event.message.text == "電影":
         buttons_template = TemplateSendMessage(
             alt_text='電影 template',
             template=ButtonsTemplate(
@@ -570,7 +480,7 @@ def handle_message(event):
         )
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
-    elif event.message.text == "看廢文":
+    if event.message.text == "看廢文":
         buttons_template = TemplateSendMessage(
             alt_text='看廢文 template',
             template=ButtonsTemplate(
@@ -591,7 +501,7 @@ def handle_message(event):
         )
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
-    elif event.message.text == "正妹":
+    if event.message.text == "正妹":
         buttons_template = TemplateSendMessage(
             alt_text='正妹 template',
             template=ButtonsTemplate(
@@ -612,7 +522,7 @@ def handle_message(event):
         )
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
-    elif event.message.text == "我":
+    if event.message.text == "我":
         buttons_template = TemplateSendMessage(
             alt_text='目錄 template',
             template=ButtonsTemplate(
