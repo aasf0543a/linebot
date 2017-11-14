@@ -313,9 +313,6 @@ def apple_Finance():
         content += '{}\n{}\n\n'.format(title, link)
     return content
 
-def text():
-    content = event.message.text
-    return content
     
 #將收到的訊息，定義文字的Event
 @handler.add(MessageEvent, message=TextMessage)
@@ -323,11 +320,6 @@ def handle_message(event):
     print("event.reply_token:", event.reply_token)
     print("event.message.text:", event.message.text)
     print("event.message.type:", event.message.type)
-    if event.message.type == "text":
-        content = text()
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=content))
     if event.message.text == "eyny":
         content = eyny_movie()
         line_bot_api.reply_message(
