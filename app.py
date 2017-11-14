@@ -526,20 +526,7 @@ def handle_message(event):
             )
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
-
-
-bot.on('message', function(event) {
-  if (event.message.type = 'text') {
-    var msg = event.message.text;
-    event.reply(msg).then(function(data) {
-      // success 
-      console.log(msg);
-    }).catch(function(error) {
-      // error 
-      console.log('error');
-    });
-  }
-});    
+    
 
     
 if __name__ == '__main__':      # 運行本項目，host=0.0.0.0可以讓其他電腦也能訪問到該網站，port指定訪問的埠。默認的host是127.0.0.1，port為5000
