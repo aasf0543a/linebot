@@ -329,7 +329,7 @@ def handle_sticker_message(event):
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     print("Handle: reply_token: " + event.reply_token + ", message: " + event.message.text)
-    if event.message.text != "eyny":
+    if event.message.text != "eyny","蘋果即時新聞":
         content = "{}".format(event.message.text)
         line_bot_api.reply_message(
         event.reply_token,
