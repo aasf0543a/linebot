@@ -529,13 +529,7 @@ def handle_message(event):
 
 s = '{"你好": "你好啊","白癡喔":"你才智障"}'
 data = json.load(s, object_hook=JSONObject)
-
-if event.message.text = data :
-line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(data))    
-else:
-    print(data)
+print(data)
     
 if __name__ == '__main__':      # 運行本項目，host=0.0.0.0可以讓其他電腦也能訪問到該網站，port指定訪問的埠。默認的host是127.0.0.1，port為5000
     app.run()
