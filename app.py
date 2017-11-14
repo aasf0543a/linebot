@@ -47,6 +47,13 @@ def callback():
 
     return 'ok'
 
+def pattern_keyword(text):
+    patterns = [
+        'eyny', '蘋果即時新聞',
+    ]
+    for pattern in patterns:
+        if re.search(pattern, text):
+            return True
 
 def pattern_mega(text):
     patterns = [
@@ -329,6 +336,12 @@ def handle_sticker_message(event):
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     print("Handle: reply_token: " + event.reply_token + ", message: " + event.message.text)
+    if event.message.text != pattern_keyword:
+        content = "{}".format(event.message.text)
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=content))
+        return 0
     if event.message.text == "eyny":
         content = eyny_movie()
         line_bot_api.reply_message(
