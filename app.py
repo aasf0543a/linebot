@@ -313,6 +313,18 @@ def apple_Finance():
         content += '{}\n{}\n\n'.format(title, link)
     return content
 
+#將收到的訊息，定義貼圖的Event
+@handler.add(MessageEvent, message=StickerMessage)
+def handle_sticker_message(event):
+    print("event.reply_token:", event.message.sticker)
+    line_bot_api.reply_message(
+        event.reply_token,
+        StickerSendMessage(
+            package_id=event.message.package_id,
+            sticker_id=event.message.sticker_id)
+    )
+
+
     
 #將收到的訊息，定義文字的Event
 @handler.add(MessageEvent, message=TextMessage)
