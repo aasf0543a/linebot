@@ -527,9 +527,6 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
 
-  if event.message.type = 'text':
-    content = event.message.text
-    TextSendMessage(text=content)
 
 bot.on('message', function(event) {
   if (event.message.type = 'text') {
