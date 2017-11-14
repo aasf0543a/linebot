@@ -328,12 +328,7 @@ def handle_sticker_message(event):
 #將收到的訊息，定義文字的Event
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    print("Handle: reply_token: " + event.reply_token + ", message: " + event.message.text)
-    content = "{}".format(event.message.text)
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=content))
-    
+    print("Handle: reply_token: " + event.reply_token + ", message: " + event.message.text)    
     if event.message.text == "eyny":
         content = eyny_movie()
         line_bot_api.reply_message(
