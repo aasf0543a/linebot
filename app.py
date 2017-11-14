@@ -45,6 +45,11 @@ def callback():
     except InvalidSignatureError:
         abort(400)
 
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=event.message.text)
+    )
+
     return 'ok'
 
 
