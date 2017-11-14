@@ -318,6 +318,7 @@ def apple_Finance():
 def handle_message(event):
     print("event.reply_token:", event.reply_token)
     print("event.message.text:", event.message.text)
+    print(message)
     if event.message.text == "eyny":
         content = eyny_movie()
         line_bot_api.reply_message(
