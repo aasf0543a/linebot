@@ -328,6 +328,12 @@ def handle_sticker_message(event):
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     print("Handle: reply_token: " + event.reply_token + ", message: " + event.message.text)
+    if event.message.text == "patty":
+        content = "大胖子"
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=content))
+        return 0
     if event.message.text == "eyny":
         content = eyny_movie()
         line_bot_api.reply_message(
