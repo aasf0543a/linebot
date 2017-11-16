@@ -340,8 +340,14 @@ def handle_message(event):
             event.reply_token,
             TextSendMessage(text=content))
         return 0
+    if event.message.text == "jennifer":
+        content = "你好胖"
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=content))
+        return 0
     if event.message.text == "Jennifer":
-        content = "嗨 安安幾歲住哪"
+        content = "臭胖子"
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=content))
