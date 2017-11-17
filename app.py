@@ -317,7 +317,7 @@ def apple_Finance():
 def handle_location_message(event):
     title = event.message.title 
     address = event.message.address
-    print(" address:" + address )
+    print(" address:" + event.message.text )
     line_bot_api.reply_message(
         event.reply_token,
         LocationSendMessage(title=event.message.title, address=event.message.address,
