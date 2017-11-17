@@ -317,7 +317,7 @@ def apple_Finance():
 def handle_location_message(event):
     title = event.message.title 
     address = event.message.address
-    latitude_earth = event.message.latitude
+    latitude_earth = Str(event.message.latitude)
     print(" address:" + latitude_earth)
     line_bot_api.reply_message(
         event.reply_token,
