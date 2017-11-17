@@ -319,7 +319,9 @@ def handle_location_message(event):
     address = event.message.address
     latitude = str(event.message.latitude)
     longitude = str(event.message.longitude)
-    print(" address:" + address + "latitude:" + latitude + "longitude:" + longitude)
+    print("地址:" + address )
+    print("經度:" + longitude)
+    print("緯度:" + latitude )
     line_bot_api.reply_message(
         event.reply_token,
         LocationSendMessage(title=event.message.title, address=event.message.address,
