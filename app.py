@@ -316,7 +316,7 @@ def apple_Finance():
 @handler.add(MessageEvent, message=LocationMessage)
 def handle_location_message(event):
     print("Handle: reply_token: " + event.reply_token + ", message title: " + event.message.title + 
-          ", latitude: " + event.message.lattitude + ", longtitude: " + event.message.longitude )
+          ", latitude: " + event.message.latitude + ", longtitude: " + event.message.longitude )
 #    line_bot_api.reply_message(
 #        event.reply_token,
 #        LocationSendMessage(
