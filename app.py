@@ -315,10 +315,10 @@ def apple_Finance():
 #將收到的訊息為Location
 @handler.add(MessageEvent, message=LocationMessage)
 def handle_location_message(event):
-    title = event.message.title 
-    address = event.message.address
-    latitude = event.message.latitude
-    longitude = event.message.longitude
+    title == event.message.title 
+#    address = event.message.address
+#    latitude = event.message.latitude
+#    longitude = event.message.longitude
     print("title:" = title, "address:" = address, "latitude:" = latitdue, "longitude:" = longitude)
     line_bot_api.reply_message(
         event.reply_token,
