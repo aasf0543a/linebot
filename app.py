@@ -317,12 +317,11 @@ def apple_Finance():
 def handle_location_message(event):
     title = event.message.title 
     address = event.message.address
-    latitude = event.message.latitude
-    longitude = event.message.longitude
-    print("title:" + title + ", address:" + address )
+    print(" address:" + address )
     line_bot_api.reply_message(
         event.reply_token,
-        LocationSendMessage("OK")
+        LocationSendMessage(title=event.message.title, address=event.message.address,
+                           latitude=event.message.latitude, longitude=event.message.longitude)
     )
 
 #將收到的訊息，定義貼圖的Event
