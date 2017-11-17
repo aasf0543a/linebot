@@ -319,13 +319,10 @@ def handle_location_message(event):
     address=event.message.address
     latitude=event.message.latitude
     longitude=event.message.longitude
-    print("title:"= title, "address:"= address, "latitude:"= latitude, "longitude:"= longitude)
-#    line_bot_api.reply_message(
-#        event.reply_token,
-#        LocationSendMessage(
-#            title=event.message.title, address=event.message.address,
-#            latitude=event.message.latitude, longitude=event.message.longitude
-#                          )
+    print("title:" = title, "address:" = address, "latitude:" = latitdue, "longitude:" = longitude)
+    line_bot_api.reply_message(
+        event.reply_token,
+        LocationSendMessage("OK")
     
 
 
