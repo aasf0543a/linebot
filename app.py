@@ -312,6 +312,18 @@ def apple_Finance():
         content += '{}\n{}\n\n'.format(title, link)
     return content
 
+#將收到的訊息為Location
+@handler.add(MessageEvent, message=LocationMessage)
+def handle_location_message(event):
+    line_bot_api.reply_message(
+        event.reply_token,
+        LocationSendMessage(
+            title=event.message.title, address=event.message.address,
+            latitude=event.message.latitude, longitude=event.message.longitude
+        )
+    )
+
+
 #將收到的訊息，定義貼圖的Event
 @handler.add(MessageEvent, message=StickerMessage)
 def handle_sticker_message(event):
