@@ -323,8 +323,7 @@ def handle_location_message(event):
     line_bot_api.reply_message(
         event.reply_token,
         LocationSendMessage("OK")
-    
-
+    )
 
 #將收到的訊息，定義貼圖的Event
 @handler.add(MessageEvent, message=StickerMessage)
