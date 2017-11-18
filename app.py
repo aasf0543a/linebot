@@ -8,6 +8,7 @@ from flask import Flask, request, abort     # 從flask框架中導入Flask類
 from imgurpython import ImgurClient
 from chatterbot import ChatBot              # 引入 ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
+from urllib.request import urlopen
 
 from linebot import (
     LineBotApi, WebhookHandler
