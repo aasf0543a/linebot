@@ -335,7 +335,7 @@ def handle_location_message(event):
     humidity = select_data1.get("humidity","none")
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage("城市:{0}\溫度: {1}\n最高溫度:{2}\n最低溫度:{3}\n相對溼度:{4}%".format(city_name, temp, max_temp, min_temp, humidity))
+        TextSendMessage("城市:{0}\n溫度: {1}\n最高溫度:{2}\n最低溫度:{3}\n相對溼度:{4}%".format(city_name, temp, max_temp, min_temp, humidity))
         )
 
 #將收到的訊息，定義貼圖的Event
