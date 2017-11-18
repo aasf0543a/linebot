@@ -341,9 +341,6 @@ def handle_location_message(event):
     sys_sun = dict['sys']
     sunrise = sys_sun.get("sunrise","none")
     sunset = sys_sun.get("sunset","none")
-    d1 = int(sunrise)+ datetime.timedelta(hour=8)
-    print(sunrise)
-    print(d1)
     sunrise_time = datetime.fromtimestamp(sunrise).strftime('%Y-%m-%d %H:%M:%S')
     sunset_time = datetime.fromtimestamp(sunset).strftime('%Y-%m-%d %H:%M:%S')
     line_bot_api.reply_message(
