@@ -24,3 +24,4 @@ chatterbot-corpus>=1.1,<1.2
 nltk==3.2.5
 googlemaps==2.5.1
 times==0.7
+pytz==3.5
