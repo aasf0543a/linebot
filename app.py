@@ -322,9 +322,32 @@ def handle_location_message(event):
     print("地址:" + address )
     print("經度:" + longitude)
     print("緯度:" + latitude )
+    key = '216d8f5d9335dc049e264d38ab7d18f9'   # api key
+    url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&APPID=' + key   # full url
+    response = urlopen(url).read().decode('utf-8')
+    obj = json.loads(response)
+    name = obj['city']['name']
+    details = []
+for state in obj['list']:
+    detail = """
+    Time : {}
+        MAIN
+            Temperature : {}
+        WIND
+            Degree : {}
+            Speed  : {}
+        WEATHER
+            Description : {}
+            Main        : {}
+""".format(state['dt_txt'][11:16],
+           state['main']['temp_kf'],
+           state['wind']['deg'],
+           state['wind']['speed'],
+           state['weather'][0]['description'],
+           state['weather'][0]['main'] + "\n" + "-" * 50)
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage("OK")
+        TextSendMessage(details)
     )
 
 #將收到的訊息，定義貼圖的Event
