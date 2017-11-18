@@ -332,7 +332,7 @@ def handle_location_message(event):
     temp = select_data1.get("temp","none")
     max_temp = select_data1.get("temp_max","none")
     min_temp = select_data1.get("temp_min","none")
-    humidity = slelect_data1.get("humidity","none")
+    humidity = select_data1.get("humidity","none")
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage("城市:{0}\n, 溫度: {1}\n, 最高溫度:{2}\n, 最低溫度:{3}\n, 相對溼度:{4}".format(city_name, temp, max_temp, min_temp, humidity))
