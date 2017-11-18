@@ -342,9 +342,7 @@ def handle_location_message(event):
     sunrise = sys_sun.get("sunrise","none")
     sunset = sys_sun.get("sunset","none")
     now = datetime.now()
-    aDay = timedelta(days=-1)
-    now = now + aDay
-    print(now.strftime('%Y-%m-%d'))
+    print(now)
     sunrise_time = datetime.fromtimestamp(sunrise).strftime('%Y-%m-%d %H:%M:%S')
     sunset_time = datetime.fromtimestamp(sunset).strftime('%Y-%m-%d %H:%M:%S')
     line_bot_api.reply_message(
