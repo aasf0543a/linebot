@@ -329,13 +329,11 @@ def handle_location_message(event):
     dict = r.json()
     select_data = dict['list']
     for box in select_data:
-
-    if 'dt_txt' in box:
-        print(box['dt_txt'])
-
-    else:
-        print('not found')
-    line_bot_api.reply_message(
+        if 'dt_txt' in box:
+            print(box['dt_txt'])
+        else:
+        print('not found')       
+        line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage("OK")
     )
