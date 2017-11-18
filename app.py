@@ -340,8 +340,8 @@ def handle_location_message(event):
     sunrise = sys_sun.get("sunrise","none")
     sunset = sys_sun.get("sunset","none")
     tpe = pytz.timezone('Asia/Taipei')
-    sunrise_time = datetime.fromtimestamp(sunrise).strftime('%Y-%m-%d %H:%M:%S').replace(tzinfo=tpe)
-    sunset_time = datetime.fromtimestamp(sunset).strftime('%Y-%m-%d %H:%M:%S').replace(tzinfo=tpe)
+    sunrise_time = datetime.datetime.fromtimestamp(sunrise).strftime('%Y-%m-%d %H:%M:%S').replace(tzinfo=tpe)
+    sunset_time = datetime.datetime.fromtimestamp(sunset).strftime('%Y-%m-%d %H:%M:%S').replace(tzinfo=tpe)
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage("城市:{0}\n地址:{1}\n溫度: {2}\n最高溫度:{3}\n最低溫度:{4}\n相對溼度:{5}%\n日出時間:{6}\n日落時間:{7}"
