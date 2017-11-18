@@ -9,6 +9,7 @@ from imgurpython import ImgurClient
 from chatterbot import ChatBot              # 引入 ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 from urllib.request import urlopen
+from time import gmtime, strftime
 
 from linebot import (
     LineBotApi, WebhookHandler
@@ -333,6 +334,11 @@ def handle_location_message(event):
     max_temp = select_data1.get("temp_max","none")
     min_temp = select_data1.get("temp_min","none")
     humidity = select_data1.get("humidity","none")
+    sys_sun = dict['sys']
+    sunrise = sys_sun.get("sunrise","none")
+    sunset = sys_sun.get("sunset","none")
+    sunrise_time = time.gmtime(sunrise)
+    print(sunrise_time)
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage("城市:{0}\n地址:{1}\n溫度: {2}\n最高溫度:{3}\n最低溫度:{4}\n相對溼度:{5}%".format(city_name, address, temp, max_temp, min_temp, humidity))
