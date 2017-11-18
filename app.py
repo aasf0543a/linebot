@@ -330,7 +330,7 @@ def handle_location_message(event):
     select_data = dict['main']
     for box in select_data:
         if 'temp' in box:
-            print(int('temp'))
+            print(int(box['temp']))
         else:
             print('not found')
         line_bot_api.reply_message(
