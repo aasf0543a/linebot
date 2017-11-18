@@ -327,13 +327,15 @@ def handle_location_message(event):
     url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&units=metric' + '&APPID=' + key   # full url
     r = requests.get(url)
     dict = r.json()
-    select_data = dict['name']
+    city_name = dict['name']
     select_data1 = dict['main']
     temp = select_data1.get("temp","none")
-    print(temp)
+    max_temp = select_data1.get("temp_max","none")
+    min_temp = select_data1.get("temp_min","none")
+    humidity = slelect_data1.get("humidity","none")
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage("OK")
+        TextSendMessage("城市:{0}\n, 溫度: {1}\n, 最高溫度:{2}\n, 最低溫度:{3}\n, 相對溼度:{4}".format(city_name, temp, max_temp, min_temp, humidity))
         )
 
 #將收到的訊息，定義貼圖的Event
