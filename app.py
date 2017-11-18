@@ -331,20 +331,20 @@ def handle_location_message(event):
     key = '216d8f5d9335dc049e264d38ab7d18f9'   # api key
     url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&units=metric' + '&APPID=' + key   # full url
     r = requests.get(url)
-    dict = r.json()
-    city_name = dict['name']
-    select_data1 = dict['main']
-    temp = select_data1.get("temp","none")
-    max_temp = select_data1.get("temp_max","none")
-    min_temp = select_data1.get("temp_min","none")
-    humidity = select_data1.get("humidity","none")
-    sys_sun = dict['sys']
-    sunrise = sys_sun.get("sunrise","none")
-    sunset = sys_sun.get("sunset","none")
-    sunrise_time = datetime.fromtimestamp(sunrise)
-    sunset_time = datetime.fromtimestamp(sunset)
-    local_sunrise_time = sunrise_time + timedelta(hours=8)
-    local_sunset_time = sunset_time + timedelta(hours=8)
+    dict = r.json()#轉成JSON格式
+    city_name = dict['name']#從JSON取出name的值
+    select_data1 = dict['main']#從JSON取出main的值
+    temp = select_data1.get("temp","none")#從JSON取出main裡面temp的值
+    max_temp = select_data1.get("temp_max","none")#從JSON取出main裡面temp_max裡面temp的值
+    min_temp = select_data1.get("temp_min","none")#從JSON取出main裡面temp_min裡面temp的值
+    humidity = select_data1.get("humidity","none")#從JSON取出main裡面humidity裡面temp的值
+    sys_sun = dict['sys']#從JSON取出sys的值
+    sunrise = sys_sun.get("sunrise","none")#從JSON取出sys裡面sunrise的值
+    sunset = sys_sun.get("sunset","none")#從JSON取出sys裡面sunset的值
+    sunrise_time = datetime.fromtimestamp(sunrise)#UTC時間轉成日期跟時間格式
+    sunset_time = datetime.fromtimestamp(sunset)#UTC時間轉成日期跟時間格式
+    local_sunrise_time = sunrise_time + timedelta(hours=8)#UTC+8
+    local_sunset_time = sunset_time + timedelta(hours=8)#UTC+8
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage("城市:{0}\n地址:{1}\n溫度: {2}\n最高溫度:{3}\n最低溫度:{4}\n相對溼度:{5}%\n日出時間:{6}\n日落時間:{7}"
