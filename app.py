@@ -329,8 +329,8 @@ def handle_location_message(event):
     dict = r.json()
     select_data = dict['main']
     for box in select_data:
-        if 'dt_txt' in box:
-            print(box['dt_txt'])
+        if 'temp' in box:
+            print(box['temp'])
         else:
             print('not found')
         line_bot_api.reply_message(
