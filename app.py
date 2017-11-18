@@ -1,3 +1,4 @@
+import pytz
 import time
 import json
 import requests
@@ -338,9 +339,8 @@ def handle_location_message(event):
     sys_sun = dict['sys']
     sunrise = sys_sun.get("sunrise","none")
     sunset = sys_sun.get("sunset","none")
-    local_sunrise = datetime.datetime(sunrise) + datetime.timedelta(hour=8)
-    local_sunrise_time = datetime.datetime.fromtimestamp(local_sunrise).strftime('%Y-%m-%d %H:%M:%S')
-    sunrise_time = datetime.datetime.fromtimestamp(sunrise).strftime('%Y-%m-%d %H:%M:%S')
+    tpe = pytz.timezone('Asia/Taipei')
+    sunrise_time = datetime.datetime.fromtimestamp(sunrise).strftime('%Y-%m-%d %H:%M:%S').replace(tzinfo=tpe)
     sunset_time = datetime.datetime.fromtimestamp(sunset).strftime('%Y-%m-%d %H:%M:%S')
     line_bot_api.reply_message(
         event.reply_token,
