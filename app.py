@@ -327,12 +327,8 @@ def handle_location_message(event):
     url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&units=metric' + '&APPID=' + key   # full url
     r = requests.get(url)
     dict = r.json()
-    select_data = dict['main']
-    for box in select_data:
-        if 'temp' in box:
-            print(int(box['temp']))
-        else:
-            print('not found')
+    select_data = dict['name']
+        print(select_data)
         line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage("OK")
