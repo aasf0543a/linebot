@@ -11,6 +11,7 @@ from imgurpython import ImgurClient
 from chatterbot import ChatBot              # 引入 ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 from urllib.request import urlopen
+from datetime import *
 
 from linebot import (
     LineBotApi, WebhookHandler
