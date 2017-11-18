@@ -1,3 +1,5 @@
+import time
+import datetime
 import json
 import requests
 import re
@@ -9,7 +11,6 @@ from imgurpython import ImgurClient
 from chatterbot import ChatBot              # 引入 ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 from urllib.request import urlopen
-from time import gmtime, strftime
 
 from linebot import (
     LineBotApi, WebhookHandler
@@ -337,7 +338,7 @@ def handle_location_message(event):
     sys_sun = dict['sys']
     sunrise = sys_sun.get("sunrise","none")
     sunset = sys_sun.get("sunset","none")
-    sunrise_time = datetime.datetime.utcfromtimestamp(surise)
+    sunrise_time = datetime.datetime.fromtimestamp(surise).strftime('%Y-%m-%d %H:%M:%S')
     print(sunrise_time)
     line_bot_api.reply_message(
         event.reply_token,
