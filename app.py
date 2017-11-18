@@ -341,14 +341,12 @@ def handle_location_message(event):
     sys_sun = dict['sys']
     sunrise = sys_sun.get("sunrise","none")
     sunset = sys_sun.get("sunset","none")
-    local_sunrise_time = sunrise + datetime.timedelta(hours=8).microseconds
-    local_sunrise_time_8 = datetime.datetime.fromtimestamp(local_sunrise_time).strftime('%Y-%m-%d %H:%M:%S')
     sunrise_time = datetime.datetime.fromtimestamp(sunrise).strftime('%Y-%m-%d %H:%M:%S')
     sunset_time = datetime.datetime.fromtimestamp(sunset).strftime('%Y-%m-%d %H:%M:%S')
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage("城市:{0}\n地址:{1}\n溫度: {2}\n最高溫度:{3}\n最低溫度:{4}\n相對溼度:{5}%\n日出時間:{6}\n日落時間:{7}"
-                        .format(city_name, address, temp, max_temp, min_temp, humidity, local_sunrise_time_8, sunset_time)))
+                        .format(city_name, address, temp, max_temp, min_temp, humidity, sunrise_time, sunset_time)))
 #將收到的訊息，定義貼圖的Event
 @handler.add(MessageEvent, message=StickerMessage)
 def handle_sticker_message(event):
