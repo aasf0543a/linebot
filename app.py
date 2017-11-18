@@ -12,6 +12,7 @@ from chatterbot import ChatBot              # 引入 ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 from urllib.request import urlopen
 from datetime import *
+from from datetime import datetime,timedelta
 from pytz import timezone
 
 from linebot import (
