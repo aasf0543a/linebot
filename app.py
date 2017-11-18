@@ -328,8 +328,9 @@ def handle_location_message(event):
     r = requests.get(url)
     dict = r.json()
     select_data = dict['name']
-    select_data1 = dict['main']dict.get['temp']
-    print(select_data1)
+    select_data1 = dict['main']
+    temp = select_data1.get("temp","none")
+    print(temp)
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage("OK")
