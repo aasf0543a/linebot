@@ -332,7 +332,7 @@ def handle_location_message(event):
         if 'dt_txt' in box:
             print(box['dt_txt'])
         else:
-        print('not found')       
+            print('not found')
         line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage("OK")
