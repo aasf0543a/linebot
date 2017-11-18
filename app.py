@@ -324,7 +324,7 @@ def handle_location_message(event):
     print("緯度:" + latitude )
     line_bot_api.reply_message(
         event.reply_token,
-        LocationSendMessage("OK")
+        TextSendMessage("OK")
     )
 
 #將收到的訊息，定義貼圖的Event
