@@ -23,4 +23,4 @@ chatterbot==0.7.6
 chatterbot-corpus>=1.1,<1.2
 nltk==3.2.5
 googlemaps==2.5.1
-time==0.7
+times==0.7
