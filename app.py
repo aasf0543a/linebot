@@ -343,6 +343,10 @@ def handle_location_message(event):
     sunset = sys_sun.get("sunset","none")#從JSON取出sys裡面sunset的值
     sunrise_time = datetime.fromtimestamp(sunrise)#UTC時間轉成日期跟時間格式
     sunset_time = datetime.fromtimestamp(sunset)#UTC時間轉成日期跟時間格式
+    now = time.time()
+    local_now = datetime.fromtimestamp(now)
+    local_datetime_now = local_now + timedelta(hours=8)#現在時間UTC+8
+    print(local_datetime_now)
     local_sunrise_time = sunrise_time + timedelta(hours=8)#日出時間UTC+8
     local_sunset_time = sunset_time + timedelta(hours=8)#日落時間UTC+8
     line_bot_api.reply_message(
