@@ -346,7 +346,8 @@ def handle_location_message(event):
     now = datetime.now().timestamp()
     local_now = datetime.fromtimestamp(now)
     local_datetime_now = local_now + timedelta(hours=8)#現在時間UTC+8
-    print(local_datetime_now)
+    local_datetime_now_fmt = datetime.strftime(%Y %m %d %H:%M:%S)
+    print(local_datetime_now_fmt)
     local_sunrise_time = sunrise_time + timedelta(hours=8)#日出時間UTC+8
     local_sunset_time = sunset_time + timedelta(hours=8)#日落時間UTC+8
     line_bot_api.reply_message(
