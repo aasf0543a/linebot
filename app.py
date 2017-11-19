@@ -344,13 +344,13 @@ def handle_location_message(event):
     sunrise_time = datetime.fromtimestamp(sunrise)#UTC時間轉成日期跟時間格式
     sunset_time = datetime.fromtimestamp(sunset)#UTC時間轉成日期跟時間格式
     now = datetime.now #目前時間UTC+0
-    local_now = now + timedelta(hours=8)#目前時間UTC+8
+    print(now)
     local_sunrise_time = sunrise_time + timedelta(hours=8)#日出時間UTC+8
     local_sunset_time = sunset_time + timedelta(hours=8)#日落時間UTC+8
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage("城市:{0}\n地址:{1}\n溫度: {2}\n最高溫度:{3}\n最低溫度:{4}\n相對溼度:{5}%\n日出時間:{6}\n日落時間:{7}\n目前時間:{8}"
-                        .format(city_name, address, temp, max_temp, min_temp, humidity, local_sunrise_time, local_sunset_time, local_now)))
+        TextSendMessage("城市:{0}\n地址:{1}\n溫度: {2}\n最高溫度:{3}\n最低溫度:{4}\n相對溼度:{5}%\n日出時間:{6}\n日落時間:{7}"
+                        .format(city_name, address, temp, max_temp, min_temp, humidity, local_sunrise_time, local_sunset_time,)))
 #將收到的訊息，定義貼圖的Event
 @handler.add(MessageEvent, message=StickerMessage)
 def handle_sticker_message(event):
