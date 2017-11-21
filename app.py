@@ -14,7 +14,6 @@ from urllib.request import urlopen
 from datetime import *
 from datetime import datetime,timedelta
 from pytz import timezone
-from nltk.book import *
 
 from linebot import (
     LineBotApi, WebhookHandler
