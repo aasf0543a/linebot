@@ -608,7 +608,7 @@ def handle_message(event):
             )
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
-    else:
+    else:#接收到什麼訊息，就回什麼訊息，應聲蟲
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=event.message.text))
     
     
