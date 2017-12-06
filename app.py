@@ -370,6 +370,19 @@ def handle_sticker_message(event):
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     print("Handle: reply_token: " + event.reply_token + ", message: " + event.message.text)
+    if event.message.text == '離開':
+        if isinstance(event.source, SourceGroup):
+            line_bot_api.reply_message(
+                event.reply_token, TextMessage(text='Leaving group'))
+            line_bot_api.leave_group(event.source.group_id)
+        elif isinstance(event.source, SourceRoom):
+            line_bot_api.reply_message(
+                event.reply_token, TextMessage(text='Leaving group'))
+            line_bot_api.leave_room(event.source.room_id)
+        else:
+            line_bot_api.reply_message(
+                event.reply_token,
+                TextMessage(text="Bot can't leave from 1:1 chat"))    
     if event.message.text == "吳尚儒":
         content = "叫什麼叫沒看過帥哥喔"
         line_bot_api.reply_message(
