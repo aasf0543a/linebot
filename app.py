@@ -322,6 +322,7 @@ def fuel():
     print('Start parsing fuel....')
     response = requests.get(target_url)
     print(response)  # 网站内容
+    return response
 
 #將收到的訊息為Location
 @handler.add(MessageEvent, message=LocationMessage)
