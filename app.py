@@ -317,6 +317,17 @@ def apple_Finance():
         content += '{}\n{}\n\n'.format(title, link)
     return content
 
+def fuel():
+    target_url = 'https://gas.goodlife.tw/'
+    print('Start parsing fuel....')
+        rs = requests.session()
+    res = rs.get(target_url, verify=False)
+    soup = BeautifulSoup(res.text, 'html.parser')
+    content = ""
+    for data in soup.select('div.id'):
+        content = data
+    return content
+
 #將收到的訊息為Location
 @handler.add(MessageEvent, message=LocationMessage)
 def handle_location_message(event):
@@ -381,7 +392,13 @@ def handle_message(event):
         else:
             line_bot_api.reply_message(
                 event.reply_token,
-                TextMessage(text="Bot can't leave from 1:1 chat"))    
+                TextMessage(text="Bot can't leave from 1:1 chat"))
+    if event.message.text == "油價":
+        content = fuel()
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=content))
+        return 0
     if event.message.text == "吳尚儒":
         content = "叫什麼叫沒看過帥哥喔"
         line_bot_api.reply_message(
