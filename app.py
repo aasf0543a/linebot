@@ -33,7 +33,7 @@ client_id = config['imgur_api']['Client_ID']
 client_secret = config['imgur_api']['Client_Secret']
 album_id = config['imgur_api']['Album_ID']
 API_Get_Image = 'https://ptt-beauty-images.herokuapp.com'
-
+database = "./chinese/greeting.corpus.json"
 
 @app.route("/callback", methods=['POST'])    # app.route裝飾器映射URL和執行的函數。
 def callback():
