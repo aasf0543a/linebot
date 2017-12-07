@@ -318,11 +318,13 @@ def apple_Finance():
     return content
 
 def fuel():
-    target_url = 'https://gas.goodlife.tw/'
+    target_url = 'https://m.gas.goodlife.tw/'
     print('Start parsing fuel....')
-    response = requests.get(target_url)
-    print(response)  # 网站内容
-    return response
+    rs = requests.session()
+    res = rs.get(target_url, verify=False)
+    soup = BeautifulSoup(res.text, 'html.parser')
+    print(soup)
+
 
 #將收到的訊息為Location
 @handler.add(MessageEvent, message=LocationMessage)
