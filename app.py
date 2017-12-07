@@ -33,7 +33,6 @@ client_id = config['imgur_api']['Client_ID']
 client_secret = config['imgur_api']['Client_Secret']
 album_id = config['imgur_api']['Album_ID']
 API_Get_Image = 'https://ptt-beauty-images.herokuapp.com'
-database = "./chinese/greeting.corpus.json"
 
 @app.route("/callback", methods=['POST'])    # app.route裝飾器映射URL和執行的函數。
 def callback():
@@ -598,6 +597,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
     else:#接收到什麼訊息，就回什麼訊息，應聲蟲
+        database = "./chinese/greeting.corpus.json"
         json_str = json.dumps(data)
         print(json_str)
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=event.message.text))
