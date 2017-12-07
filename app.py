@@ -321,7 +321,7 @@ def fuel():
     target_url = 'https://gas.goodlife.tw/'
     print('Start parsing fuel....')
     response = requests.get(target_url)
-    print response.content  # 网站内容
+    print(response)  # 网站内容
 
 #將收到的訊息為Location
 @handler.add(MessageEvent, message=LocationMessage)
