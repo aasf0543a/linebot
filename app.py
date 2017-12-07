@@ -389,30 +389,6 @@ def handle_message(event):
             event.reply_token,
             TextSendMessage(text=content))
         return 0
-    if event.message.text == "ㄟ":
-        content = "ㄟ三小"
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=content))
-        return 0
-    if event.message.text == "jennifer":
-        content = "你好胖"
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=content))
-        return 0
-    if event.message.text == "Jennifer":
-        content = "臭胖子"
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=content))
-        return 0
-    if event.message.text == "patty":
-        content = "大胖子"
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=content))
-        return 0
     if event.message.text == "eyny":
         content = eyny_movie()
         line_bot_api.reply_message(
