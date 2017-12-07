@@ -324,6 +324,7 @@ def fuel():
     res = rs.get(target_url, verify=False)
     soup = BeautifulSoup(res.text, 'html.parser')
     content = ""
+    for data in soup.select('ul.id'):
     print(data)
 
 
