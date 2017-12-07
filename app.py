@@ -320,7 +320,7 @@ def apple_Finance():
 def fuel():
     target_url = 'https://gas.goodlife.tw/'
     print('Start parsing fuel....')
-        rs = requests.session()
+    rs = requests.session()
     res = rs.get(target_url, verify=False)
     soup = BeautifulSoup(res.text, 'html.parser')
     content = ""
