@@ -325,7 +325,9 @@ def fuel():
     soup = BeautifulSoup(res.text, 'html.parser')
     content = ""
     for data in soup.select('ul.id'):
-    print(data)
+        text = data.text
+    print(text)
+    return content
 
 
 #將收到的訊息為Location
