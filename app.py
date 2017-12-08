@@ -327,7 +327,7 @@ def fuel():
     for data in fuel_header_tag.select('h2'):
         title = data.text
         print(title)
-    for data1 in fuel_header_tag.select('h3'):
+    for data1 in fuel_header_tag.select('li'):
         title1 = data1.text
         print(title1)
     content = "Wait for minutes"
