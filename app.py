@@ -323,10 +323,8 @@ def fuel():
     rs = requests.session()
     res = rs.get(target_url, verify=False)
     soup = BeautifulSoup(res.text, 'html.parser')
+    print(soup)
     content = "Wait for minutes"
-    for data in soup.select('div.main'):
-        text = data.text
-        print(text)
     return content
 
 
