@@ -325,7 +325,8 @@ def fuel():
     soup = BeautifulSoup(res.text, 'html.parser')
     content = "Wait for minutes"
     for data in soup.select('div.main'):
-        print(data)
+        text = data.text
+        print(text)
     return content
 
 
