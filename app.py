@@ -328,7 +328,7 @@ def fuel():
         title = data.text
         print(title)
     for data1 in fuel_header_tag.select('li'):
-        title1 = data1.text
+        title1 = data1.select('h3')[1].text
         print(title1)
     content = title1
     return content
