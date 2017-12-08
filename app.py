@@ -328,7 +328,7 @@ def fuel():
         title = data.text
         print(title)
     for data1 in fuel_header_tag.select('li'):
-        title1 = re.sub(r"s+","", data1, flags=re.UNICODE)
+        title1 = data1.replace("","")
         print(title1)
     content = title1
     return content
