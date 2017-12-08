@@ -324,7 +324,7 @@ def fuel():
     res = rs.get(target_url, verify=False)
     soup = BeautifulSoup(res.text, 'html.parser')
     fuel_header_tag = soup.find('div', id ='cpc')
-    for data in soup.select('h2'):
+    for data in fuel_header_tag.select('h2'):
         title = data.text
     print(title)
     content = "Wait for minutes"
