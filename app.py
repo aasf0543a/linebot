@@ -318,7 +318,7 @@ def apple_Finance():
     return content
 
 def fuel():
-    target_url = 'https://m.gas.goodlife.tw/'
+    target_url = 'https://gas.goodlife.tw/'
     print('Start parsing fuel....')
     rs = requests.session()
     res = rs.get(target_url, verify=False)
