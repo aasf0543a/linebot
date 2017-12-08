@@ -328,11 +328,10 @@ def fuel():
         title = data.text
         print(title)
     for data1 in fuel_header_tag.select('li'):
-        title1 = data1.select('h3')[0].text
+        title1 = re.sub(r"s+","", data1, flags=re.UNICODE)
         print(title1)
     content = title1
     return content
-
 
 #將收到的訊息為Location
 @handler.add(MessageEvent, message=LocationMessage)
