@@ -323,7 +323,8 @@ def fuel():
     rs = requests.session()
     res = rs.get(target_url, verify=False)
     soup = BeautifulSoup(res.text, 'html.parser')
-    print(soup)
+    fuel_header_tag = soup.find('div', id='gas-price')
+    print(fuel_header_tag)
     content = "Wait for minutes"
     return content
 
