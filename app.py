@@ -328,9 +328,10 @@ def fuel():
         title = data.text
         print(title)
     for data1 in fuel_header_tag.select('li'):
-        title1 = data1.replace("","")
-        print(title1)
-    content = title1
+        title1 = data.text
+        title2 = title1.replace("","")
+        print(title2)
+    content = title2
     return content
 
 #將收到的訊息為Location
