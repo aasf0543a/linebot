@@ -324,14 +324,10 @@ def fuel():
     res = rs.get(target_url, verify=False)
     soup = BeautifulSoup(res.text, 'html.parser')
     fuel_header_tag = soup.find('div', id ='cpc')
-    for data in fuel_header_tag.select('h2'):
+    for data in fuel_header_tag.select('li'):
         title = data.text
         print(title)
-    for data1 in fuel_header_tag.select('li'):
-        title1 = data.text
-        title2 = title1.replace("","")
-        print(title2)
-    content = title2
+    content = title
     return content
 
 #將收到的訊息為Location
