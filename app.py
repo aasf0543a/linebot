@@ -325,13 +325,13 @@ def fuel():
     res = rs.get(target_url, verify=False)
     soup = BeautifulSoup(res.text, 'html.parser')
     fuel_header_tag = soup.find('div', id ='cpc')
-    for index, data in enumerate(soup.select('ul'), 0):
+    for index, data in enumerate(soup.select('li'), 0):
         if index == 15:
             return content
         if head in data['li']:
             title = data.select('h3')[0].text
         else:
-            title = data.select('li')[0].text
+            title = data.text
         content += '{}\n'.format(title)
         return content
             
