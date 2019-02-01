@@ -623,10 +623,9 @@ def handle_message(event):
     else:#接收到什麼訊息，就回什麼訊息，應聲蟲
         str = event.message.text
         separate = str.split(' ', 1)
-        if sepaate[1] == "1F":
+        if sepaate[1].text == "1F":
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "已記錄 " + separate[1] + " 時間\n" + "地圖: 1F"))
         else:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "關鍵字錯誤"))
-    
+            line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "關鍵字錯誤)
     
 if __name__ == '__main__':app.run()# 運行本項目，host=0.0.0.0可以讓其他電腦也能訪問到該網站，port指定訪問的埠。默認的host是127.0.0.1，port為5000
