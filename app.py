@@ -623,7 +623,7 @@ def handle_message(event):
     else:#接收到什麼訊息，就回什麼訊息，應聲蟲
         str = event.message.text
         separate = str.split(' ', 1)
-        if sepatate[1] == "1F":
+        if sepaate[1] == "1F":
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "已記錄 " + separate[1] + " 時間\n" + "地圖: 1F"))
         else
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "關鍵字錯誤"))
