@@ -625,7 +625,7 @@ def handle_message(event):
         separate = str.split(' ', 1)
         if sepaate[1] == "1F":
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "已記錄 " + separate[1] + " 時間\n" + "地圖: 1F"))
-        else
+        else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "關鍵字錯誤"))
     
     
