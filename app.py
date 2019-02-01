@@ -622,6 +622,8 @@ def handle_message(event):
         return 0
     else:#接收到什麼訊息，就回什麼訊息，應聲蟲
         str = event.message.text
+        separate = str.split(' ', 1)
+        print (separate)
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=str))
     
     
