@@ -621,7 +621,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
     else:#接收到什麼訊息，就回什麼訊息，應聲蟲
-        lst = ["1F"]
+        lst = ["1F",' ']
         str = event.message.text
         separate = str.split(' ', 1)
         s1 = set(lst)
