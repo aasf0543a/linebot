@@ -324,7 +324,7 @@ def fuel():
     print(res.status_code)
     if res.status_code == 200:
         print('OK')
-        else:
+    else:
         print('Fail')
 
             
