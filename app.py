@@ -319,6 +319,7 @@ def apple_Finance():
 
 def fuel():
     target_url = 'http://www.taiwanoil.org/z.php?z=oiltw&c=94abf0&tz=Asia/Taipei&tf=1'
+    target_url.encoding = 'utf-8'
     print('Start parsing fuel....')
     rs = requests.session()
     res = rs.get(target_url, verify=False)
