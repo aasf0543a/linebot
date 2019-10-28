@@ -323,9 +323,9 @@ def fuel():
     res = requests.get(target_url)
     print(res.status_code)
     if res.status_code == 200:
-    print('OK')
-    else
-    print('Fail')
+        print('OK')
+        else
+        print('Fail')
 
             
 #將收到的訊息為Location
