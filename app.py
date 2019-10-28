@@ -322,8 +322,10 @@ def fuel():
     print('Start parsing fuel....')
     res = requests.get(target_url)
     print(res.status_code)
-    if res.status_code == requests.codes.ok
-    print("OK")
+    if res.status_code == 200:
+    print('OK')
+    else
+    print('Fail')
 
             
 #將收到的訊息為Location
