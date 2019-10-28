@@ -323,8 +323,8 @@ def fuel():
     rs = requests.session()
     res = rs.get(target_url, verify=False)
     res.encoding = 'utf-8'
-    soup = BeautifulSoup(res.text, 'html.parser')
-    print(soup.find('td').text)
+    soup = BeautifulSoup(res.text, 'lxml')
+    print(soup)
             
 #將收到的訊息為Location
 @handler.add(MessageEvent, message=LocationMessage)
