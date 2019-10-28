@@ -318,12 +318,13 @@ def apple_Finance():
     return content
 
 def fuel():
-    target_url = 'http://www.taiwanoil.org/z.php?z=oiltw&c=94abf0&tz=Asia/Taipei&tf=1'
+    target_url = 'http://www.taiwanoil.org'
     print('Start parsing fuel....')
     res = requests.get(target_url)
-    soup = BeautifulSoup(res.text, 'html.parser')
-    rows = soup.find_all('a')
-    print(rows)
+    print(res.status_code)
+    if res.status_code == requests.codes.ok:
+    print("OK")
+
             
 #將收到的訊息為Location
 @handler.add(MessageEvent, message=LocationMessage)
