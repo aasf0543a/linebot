@@ -322,7 +322,7 @@ def fuel():
     print('Start parsing fuel....')
     res = requests.get(target_url)
     print(res.status_code)
-    if res.status_code == requests.codes.ok:
+    if res.status_code == requests.codes.ok
     print("OK")
 
             
