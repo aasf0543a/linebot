@@ -323,6 +323,7 @@ def fuel():
     rs = requests.session()
     res = rs.get(target_url, verify=False)
     soup = BeautifulSoup(res.text, 'html.parser')
+    content = ""
     for index, data in enumerate(soup.select('td'), 0):
         if index == 15:
             return content
