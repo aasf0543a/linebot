@@ -332,7 +332,7 @@ def fuel():
     content6 = soup.find_all('td')[6].text#price
     content7 = soup.find_all('td')[7].text#中油92
     content8 = soup.find_all('td')[8].text#price
-    content = "{0}\n{1}\"{2}\n{3}\"{4}\n{5}\"{6}\n".format(content2, content7, content8, content5, content6, content3, content4)
+    content = "{0}\n{1}\000\000{2}\n{3}\000\000{4}\n{5}\000\000{6}".format(content2, content7, content8, content5, content6, content3, content4)
     return content
     
 #將收到的訊息為Location
