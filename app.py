@@ -321,12 +321,13 @@ def fuel():
     target_url = 'http://www.taiwanoil.org'
     print('Start parsing fuel....')
     res = requests.get(target_url)
-    print(res.status_code)
-    if res.status_code == 200:
-        print('OK')
-    else:
-        print('Fail')
-
+    #print(res.status_code)
+    #if res.status_code == 200:
+    #    print('OK')
+    #else:
+    #    print('Fail')
+    oilpage = res.encode('latin1', 'ignore').decode('big5')
+    return cotent(oilpage)
             
 #將收到的訊息為Location
 @handler.add(MessageEvent, message=LocationMessage)
