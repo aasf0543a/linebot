@@ -318,7 +318,7 @@ def apple_Finance():
     return content
 
 def fuel():
-    target_url = 'http://www.taiwanoil.org'
+    target_url = 'http://www.taiwanoil.org/z.php?z=oiltw&c=94abf0&tz=Asia/Taipei&tf=1'
     print('Start parsing fuel....')
     res = requests.get(target_url)
     #print(res.status_code)
@@ -327,7 +327,7 @@ def fuel():
     #else:
     #    print('Fail')
     oilpage = res.encode('latin1', 'ignore').decode('big5')
-    return cotent(oilpage)
+    return oilpage
             
 #將收到的訊息為Location
 @handler.add(MessageEvent, message=LocationMessage)
