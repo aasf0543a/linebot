@@ -322,7 +322,8 @@ def fuel():
     print('Start parsing fuel....')
     res = requests.get(target_url)
     soup = BeautifulSoup(res.text, 'html.parser')
-    print(soup.prettify())
+    title_td = soup.td
+    print(title_td)
             
 #將收到的訊息為Location
 @handler.add(MessageEvent, message=LocationMessage)
