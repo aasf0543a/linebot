@@ -326,7 +326,7 @@ def fuel():
     content = ""
     for index, data in enumerate(soup.select('td'), 0):
         if index == 15:
-            return content
+            print(content)
             
 #將收到的訊息為Location
 @handler.add(MessageEvent, message=LocationMessage)
