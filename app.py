@@ -324,16 +324,16 @@ def fuel():
     res = rs.get(target_url, verify=False)
     res.encoding = 'utf-8'
     soup = BeautifulSoup(res.text, 'html.parser')
-    content1 = soup.find_all('td')[1].text
-    content2 = soup.find_all('td')[2].text
-    content3 = soup.find_all('td')[3].text
-    content4 = soup.find_all('td')[4].text
-    content5 = soup.find_all('td')[5].text
-    content6 = soup.find_all('td')[6].text
-    content7 = soup.find_all('td')[7].text
-    content8 = soup.find_all('td')[8].text
-    print(content1 +content2 +content3 +content4 +content5 +content7 +content8)
-    return 0
+    content1 = soup.find_all('td')[1].text#供應商
+    content2 = soup.find_all('td')[2].text#今日油價
+    content3 = soup.find_all('td')[3].text#中油98
+    content4 = soup.find_all('td')[4].text#price
+    content5 = soup.find_all('td')[5].text#中油95
+    content6 = soup.find_all('td')[6].text#price
+    content7 = soup.find_all('td')[7].text#中油92
+    content8 = soup.find_all('td')[8].text#price
+    content = "{0}\n{1}\"{2}\n{3}\"{4}\n{5}\"{6}\n".format(content2, content7, content8, content5, content6, content3, content4)
+    return content
     
 #將收到的訊息為Location
 @handler.add(MessageEvent, message=LocationMessage)
