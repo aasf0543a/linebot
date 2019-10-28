@@ -318,22 +318,22 @@ def apple_Finance():
     return content
 
 def fuel():
-    target_url = 'https://gas.goodlife.tw/'
-    head = 'https://tw.finance.appledaily.com'
+    target_url = 'http://www.taiwanoil.org/z.php?z=oiltw&c=94abf0&tz=Asia/Taipei&tf=1'
     print('Start parsing fuel....')
     rs = requests.session()
     res = rs.get(target_url, verify=False)
     soup = BeautifulSoup(res.text, 'html.parser')
-    fuel_header_tag = soup.find('div', id ='cpc')
-    for index, data in enumerate(soup.select('li'), 0):
-        if index == 15:
-            return content
-        if head in data['li']:
-            title = data.select('h3')[0].text
-        else:
-            title = data.text
-        content += '{}\n'.format(title)
-        return content
+    print(soup)
+    //fuel_header_tag = soup.find('div', id ='cpc')
+    //for index, data in enumerate(soup.select('li'), 0):
+    //    if index == 15:
+    //        return content
+    //    if head in data['li']:
+    //       title = data.select('h3')[0].text
+    //   else:
+    //        title = data.text
+    //    content += '{}\n'.format(title)
+    //    return content
             
 #將收到的訊息為Location
 @handler.add(MessageEvent, message=LocationMessage)
