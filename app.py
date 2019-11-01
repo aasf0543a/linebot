@@ -413,6 +413,12 @@ def handle_message(event):
             event.reply_token,
             TextSendMessage(text=content))
         return 0
+     if event.message.text == "劉秀儀":
+        content = "白癡喔，我姓張，我是張小姐"
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=content))
+        return 0
     if event.message.text == "eyny":
         content = eyny_movie()
         line_bot_api.reply_message(
