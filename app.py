@@ -631,7 +631,12 @@ def handle_message(event):
     else:#接收到什麼訊息，就回什麼訊息，應聲蟲
         stream_url = 'https://google-translate-proxy.herokuapp.com/api/tts?query='+event.message.text+'&language=zh-tw'
         print(stream_url)
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=event.message.text))
+        message = {
+            "type": "audio"
+            "originalContentUrl": "https://google-translate-proxy.herokuapp.com/api/tts?query='+event.message.text+'&language=zh-tw",
+            "duration":10000"
+            }
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=message))
         return 0
 
 if __name__ == '__main__':app.run()# 運行本項目，host=0.0.0.0可以讓其他電腦也能訪問到該網站，port指定訪問的埠。默認的host是127.0.0.1，port為5000
