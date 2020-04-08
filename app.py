@@ -1,4 +1,4 @@
-import urllib.parse
+from urllib.parse import quote
 import pytz
 import time
 import json
