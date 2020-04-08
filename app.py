@@ -629,9 +629,17 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
     else:#接收到什麼訊息，就回什麼訊息，應聲蟲
-        stream_url = 'https://google-translate-proxy.herokuapp.com/api/tts?query='+event.message.text+'&language=zh-tw'
-        print(stream_url)
-        line_bot_api.reply_message(event.reply_token, AudioSendMessage(original_content_url = 'https://google-translate-proxy.herokuapp.com/api/tts?query='+event.message.text+'&language=zh-tw',duration=20000))
-        return 0
+patterns = ['你好','hi','hello','哈囉','嗨']
+    r = ['教授最近好嗎','哈囉吳教授 最近很忙嗎','在做實驗室測試','這邊是中正大學','哈囉阿','帥哥 找我嗎?']
+    n = random.randint(0,5)
+    for pattern in patterns:
+        if re.search(pattern,text.lower()):
+                t =  quote(r[n])   #把中文字改成網頁的編碼格式，利用我import進來的urllib.parse模組的quote方法來幫忙我們做到
+                stream_url = 'https://google-translate-proxy.herokuapp.com/api/tts?query='+t+'&language=zh-tw'
+                message = AudioSendMessage(
+                    original_content_url = stream_url,
+                    duration=20000
+                )
+                line_bot_api.reply_message(event.reply_token,message)
 
 if __name__ == '__main__':app.run()# 運行本項目，host=0.0.0.0可以讓其他電腦也能訪問到該網站，port指定訪問的埠。默認的host是127.0.0.1，port為5000
