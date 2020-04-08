@@ -630,7 +630,7 @@ def handle_message(event):
     else:#接收到什麼訊息，就回什麼訊息，應聲蟲
         str = event.message.text
         t = str.split(' ', 1)
-        stream_url = 'https://google-translate-proxy.herokuapp.com/api/tts?query='+t+'&language=zh-tw'
+        stream_url = 'https://google-translate-proxy.herokuapp.com/api/tts?query='t'&language=zh-tw'
         message = AudioSendMessage(original_content_url = stream_url,duration=20000)
         line_bot_api.reply_message(event.reply_token, message)
 
