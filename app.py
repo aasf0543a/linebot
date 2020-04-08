@@ -631,7 +631,7 @@ def handle_message(event):
     else:#接收到什麼訊息，就回什麼訊息，應聲蟲
         str = event.message.text
         t = str.split(' ', 1)
-        transfer = urllib.parse.quote(t)
+        transfer = quote(t)
         print(transfer)
         stream_url = 'https://google-translate-proxy.herokuapp.com/api/tts?query='+ transfer +'&language=zh-tw'
         print(stream_url)
