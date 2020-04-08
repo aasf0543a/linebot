@@ -628,6 +628,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, buttons_template)
         return 0
     else:#接收到什麼訊息，就回什麼訊息，應聲蟲
+        @handler.add(MessageEvent, message=TextMessage)
         str = event.message.text
         t = str.split(' ', 1)
         stream_url = 'https://google-translate-proxy.herokuapp.com/api/tts?query='+'t'+'&language=zh-tw'
