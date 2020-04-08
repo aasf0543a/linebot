@@ -632,7 +632,7 @@ def handle_message(event):
         str = event.message.text
         t = str.split(' ', 1)
         print(t)
-        stream_url = 'https://google-translate-proxy.herokuapp.com/api/tts?query=智障&language=zh-tw')
+        stream_url = 'https://google-translate-proxy.herokuapp.com/api/tts?query=智障&language=zh-tw'
         print(stream_url)
         message = AudioSendMessage(original_content_url = stream_url)
         line_bot_api.reply_message(event.reply_token, message)
