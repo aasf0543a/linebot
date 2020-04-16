@@ -99,8 +99,7 @@ def apple_news():
 #           title = data.select('title')[0].text
         else:
             link = data['href']
-            title = data.select('title')[1].text
-            content += '{}\n{}{}\n\n'.format(title, 'https://tw.appledaily.com', link)
+            content += '{}\n{}{}\n\n'.format(index, 'https://tw.appledaily.com', link)
             return content
 
 
