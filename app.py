@@ -91,14 +91,14 @@ def apple_news():
     ##res = requests.get(target_url, verify=False)
     soup = BeautifulSoup(res.text, 'html.parser')
     content = ""
-    for index, data in enumerate(soup.select('.aht_play'), 0):
+    for index, data in enumerate(soup.select('.list orange'), 0):
         if index == 15:
             return content
         if head in data['href']:
-           title = data.select('span')[0].text
+           title = data.select('title')[0].text
            print(data)
         else:
-           title = data.select('span')[0].text
+           title = data.select('title')[0].text
            link = data['href']
         content += '{}\n{}\n\n'.format(title, link)
     return content
