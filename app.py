@@ -82,7 +82,7 @@ def eyny_movie():
 
 
 def apple_news():
-    target_url = 'https://tw.appledaily.com/home/' #'http://www.appledaily.com.tw/realtimenews/section/new/'
+    target_url = 'http://www.appledaily.com.tw/realtimenews/section/new/'
     head = 'https://tw.appledaily.com'
     print('Start parsing appleNews....')
     rs = requests.session()
