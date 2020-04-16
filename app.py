@@ -106,8 +106,8 @@ def apple_news():
     print(title)
     font = data['font']
     print(font)
-            content += '{}{}\n\n'.format('https://tw.appledaily.com', link)
-            return content
+    content += '{}{}\n\n'.format('https://tw.appledaily.com', link)
+    return content
 
 
 def get_page_number(content):
