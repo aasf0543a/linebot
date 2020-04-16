@@ -88,7 +88,6 @@ def apple_news():
     print('Start parsing appleNews....')
     rs = requests.session()
     res = rs.get(target_url, verify=False)
-    ##res = requests.get(target_url, verify=False)
     soup = BeautifulSoup(res.text, 'html.parser')
     content = ""
     for index, data in enumerate(soup.select('div.aht_title a'), 0):
@@ -98,6 +97,7 @@ def apple_news():
 #           title = data.select('title')[0].text
         else:
             link = data['href']
+            title = data['title']
             content += '{}\n{}{}\n\n'.format(index, 'https://tw.appledaily.com', link)
             return content
 
