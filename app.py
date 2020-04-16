@@ -92,17 +92,16 @@ def apple_news():
     content = ""
     test = soup.select('.aht_title a')
     print(test)
-    #for index, data in enumerate(soup.select('.aht_title a')):
-    #    print(data)
-    #    if index == 15:
-    #        return content
+    for index, data in enumerate(soup.select('.aht_title a'), 0):
+        if index == 15:
+            return content
 #        if head in data['href']:
 #        title = data.select('title')[0].text
-    #    else:
-    #        link = data['href']
+        else:
+            link = data['href']
     #        title = data['title']
-    #        content += '{}\n{}{}\n\n'.format(index, 'https://tw.appledaily.com', link)
-    #        return content
+            content += '{}\n{}{}\n\n'.format(index, 'https://tw.appledaily.com', link)
+            return content
 
 
 def get_page_number(content):
