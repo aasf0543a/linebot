@@ -86,8 +86,9 @@ def apple_news():
     target_url = 'https://tw.appledaily.com/column/index/' #'http://www.appledaily.com.tw/realtimenews/section/new/'
     head = '/column/article'
     print('Start parsing appleNews....')
-    rs = requests.session()
-    res = rs.get(target_url, verify=False)
+    ##rs = requests.session()
+    ##res = rs.get(target_url, verify=False)
+    res = request.get(target_url, verify=False)
     soup = BeautifulSoup(res.text, 'html.parser')
     content = ""
     for index, data in enumerate(soup.select('aht_play'), 0):
