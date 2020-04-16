@@ -89,9 +89,9 @@ def apple_news():
     rs = requests.session()
     res = rs.get(target_url, verify=False)
     soup = BeautifulSoup(res.text, 'html.parser')
-    print(soup)
     content = ""
     for index, data in enumerate(soup.select('aht_play'), 0):
+        print(data)
         if index == 15:
             return content
         if head in data['href']:
