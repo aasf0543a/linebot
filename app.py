@@ -1,4 +1,5 @@
 import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 import pytz
 import time
 import json
