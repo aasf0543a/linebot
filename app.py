@@ -84,12 +84,12 @@ def eyny_movie():
 
 def apple_news():
     target_url = 'https://tw.appledaily.com/column/index/' #'http://www.appledaily.com.tw/realtimenews/section/new/'
-    head = 'https://tw.appledaily.com'
+    head = '/colum/article'
     print('Start parsing appleNews....')
     rs = requests.session()
     res = rs.get(target_url, verify=False)
     soup = BeautifulSoup(res.text, 'html.parser')
-    #print(soup)
+    print(soup)
     content = ""
     for index, data in enumerate(soup.select('.section a'), 0):
         if index == 15:
