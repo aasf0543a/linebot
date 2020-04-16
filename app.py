@@ -99,9 +99,13 @@ def apple_news():
         if head in data['href']:
            title = data.select('title')[0].text
         else:
-            title = data.select('title')[0].text
-            print(title)
+#            title = data.select('title')[0].text
+#            print(title)
             link = data['href']
+    title = data['title']
+    print(title)
+    font = data['font']
+    print(font)
             content += '{}{}\n\n'.format('https://tw.appledaily.com', link)
             return content
 
