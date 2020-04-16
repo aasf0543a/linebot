@@ -91,17 +91,18 @@ def apple_news():
     ##res = requests.get(target_url, verify=False)
     soup = BeautifulSoup(res.text, 'html.parser')
     content = ""
-    for index, data in enumerate(soup.select('.list orange'), 0):
-        if index == 15:
-            return content
-        if head in data['href']:
-           title = data.select('title')[0].text
-           print(data)
-        else:
-           title = data.select('title')[0].text
-           link = data['href']
-        content += '{}\n{}\n\n'.format(title, link)
-    return content
+    a_list = soup.select('div.aht_title a')
+    print(a_list)
+#    for index, data in enumerate(soup.select('div.aht_title a'), 0):
+#        if index == 15:
+#            return content
+#        if head in data['href']:
+#           title = data.select('title')[0].text
+#        else:
+#           title = data.select('title')[0].text
+#           link = data['href']
+#        content += '{}\n{}\n\n'.format(title, link)
+#    return content
 
 
 def get_page_number(content):
