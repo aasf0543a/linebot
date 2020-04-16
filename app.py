@@ -319,7 +319,7 @@ def apple_Finance():
            title = data.select('h1')[0].text
         else:
            title = data.select('h1')[0].text
-           link = head + data['href']
+           link = data['href']
         content += '{}\n{}\n\n'.format(title, link)
     return content
 
