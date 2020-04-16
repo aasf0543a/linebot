@@ -90,8 +90,8 @@ def apple_news():
     res = rs.get(target_url, verify=False)
     soup = BeautifulSoup(res.text, 'html.parser')
     content = ""
-#    for index, data in enumerate(soup.select('div.aht_title a'), 0):
-     for index, data in enumerate(soup.find_all('a', class_='aht_title'), 0):
+    for index, data in enumerate(soup.select('div.aht_title')):
+        print(data)
         if index == 15:
             return content
 #        if head in data['href']:
