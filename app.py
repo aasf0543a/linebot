@@ -93,13 +93,12 @@ def apple_news():
     content = ""
     list = soup.select('div.aht_title a')
     print(list)
-    index = 0
-    for index, data in enumerate(soup.select('div.aht_title a'), index):
+    for index, data in enumerate(soup.select('ul.list orange'), 0):
         print(data)
         if index == 15:
             return content
-        if head in data['href']:
-           title = data.select('title')[0].text
+#        if head in data['href']:
+#           title = data.select('title')[0].text
         else:
             link = data['href']
             title = data['title']
