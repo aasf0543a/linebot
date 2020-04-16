@@ -84,7 +84,7 @@ def eyny_movie():
 
 def apple_news():
     target_url = 'https://tw.appledaily.com/column/index/' #'http://www.appledaily.com.tw/realtimenews/section/new/'
-    head = 'https://tw.appledaily.com/'
+    head = 'https://tw.appledaily.com'
     print('Start parsing appleNews....')
     rs = requests.session()
     res = rs.get(target_url, verify=False)
@@ -102,7 +102,7 @@ def apple_news():
 #          title = data.select('title')[0].text
            link = data['href']
 #        content += '{}\n{}\n\n'.format(head, link)
-         content += '{}{}'.format(head, link)
+         content += '{}{}\n'.format(head, link)
     return content
 
 
