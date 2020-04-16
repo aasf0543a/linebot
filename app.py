@@ -93,6 +93,7 @@ def apple_news():
     content = ""
     list = soup.select('div.aht_title a')
     print(list)
+    index = 0
     for index, data in enumerate(soup.select('div.aht_title a'), index):
         print(data)
         if index == 15:
