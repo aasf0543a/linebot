@@ -95,12 +95,12 @@ def apple_news():
     for index, data in enumerate(soup.select('.aht_title a'), 0):
         if index == 15:
             return content
-#        if head in data['href']:
-#        title = data.select('title')[0].text
+        if head in data['href']:
+            title = data.select('title')[0].text
         else:
             link = data['href']
     #        title = data['title']
-            content += '{}\n{}{}\n\n'.format(index, 'https://tw.appledaily.com', link)
+            content += '{}\n{}{}\n\n'.format(title, 'https://tw.appledaily.com', link)
             return content
 
 
