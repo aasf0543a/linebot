@@ -91,9 +91,7 @@ def apple_news():
     ##res = requests.get(target_url, verify=False)
     soup = BeautifulSoup(res.text, 'html.parser')
     content = ""
-    list = soup.select('div.aht_title a')
-    print(list)
-    for index, data in enumerate(soup.select('ul.list orange'), 0):
+    for index, data in enumerate(soup.select('div.aht_title a'), 0):
         print(data)
         if index == 15:
             return content
@@ -101,7 +99,7 @@ def apple_news():
 #           title = data.select('title')[0].text
         else:
             link = data['href']
-            title = data['title']
+            title = data.select('title')[0].text
             content += '{}\n{}{}\n\n'.format(title, 'https://tw.appledaily.com', link)
             return content
 
