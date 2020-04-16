@@ -88,7 +88,7 @@ def apple_news():
     print('Start parsing appleNews....')
     ##rs = requests.session()
     ##res = rs.get(target_url, verify=False)
-    res = request.get(target_url, verify=False)
+    res = requests.get(target_url, verify=False)
     soup = BeautifulSoup(res.text, 'html.parser')
     content = ""
     for index, data in enumerate(soup.select('aht_play'), 0):
