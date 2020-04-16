@@ -99,9 +99,10 @@ def apple_news():
         if head in data['href']:
            title = data.select('title')[0].text
         else:
- #          title = data.select('title')[0].text
+#          title = data.select('title')[0].text
            link = data['href']
-        content += '{}\n{}\n\n'.format('title', link)
+#        content += '{}\n{}\n\n'.format(head, link)
+         content += '{}{}'.format(head, link)
     return content
 
 
@@ -306,6 +307,7 @@ def panx():
 def apple_Finance():
     target_url = 'https://tw.finance.appledaily.com/realtime/'
     head = 'https://tw.finance.appledaily.com'
+    head1 = 'xxx'
     print('Start parsing appleNews....')
     rs = requests.session()
     res = rs.get(target_url, verify=False)
@@ -314,7 +316,7 @@ def apple_Finance():
     for index, data in enumerate(soup.select('.rtddt a'), 0):
         if index == 15:
             return content
-        if head in data['href']:
+        if head1 in data['href']:
            title = data.select('h1')[0].text
         else:
            title = data.select('h1')[0].text
