@@ -101,9 +101,9 @@ def apple_news():
         else:
             title = data.select('title')[0].text
             print(title)
-           link = data['href']
-        content += '{}{}\n\n'.format('https://tw.appledaily.com', link)
-    return content
+            link = data['href']
+            content += '{}{}\n\n'.format('https://tw.appledaily.com', link)
+            return content
 
 
 def get_page_number(content):
