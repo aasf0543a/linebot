@@ -90,7 +90,7 @@ def apple_news():
     res = rs.get(target_url, verify=False)
     soup = BeautifulSoup(res.text, 'html.parser')
     content = ""
-    for index, data in enumerate(soup.select('div.aht_title.a')):
+    for index, data in enumerate(soup.select('.aht_title a')):
         print(data)
         if index == 15:
             return content
